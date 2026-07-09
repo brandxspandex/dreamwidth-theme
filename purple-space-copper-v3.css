@@ -124,16 +124,32 @@ a:hover{ color:var(--gold-bright); }
 
 
 /* ---------- MASTHEAD ---------- */
-#masthead{ position:relative; padding:3em 1.5em 2.4em; text-align:center; }
-#masthead::after{
-  content:""; position:absolute; top:18px; right:26px;
-  width:70px; height:70px; /* icon removed for this test */
+#header{ position:relative; padding:2.2em 1.5em 1.6em; text-align:center; }
+#header::after{
+  content:""; position:absolute; top:14px; right:26px;
+  width:56px; height:56px; /* icon added back in a later step */
 }
-#masthead .header-inner, #masthead h1, #pagetitle{
-  font-size:2.5em; font-weight:400; letter-spacing:0.05em;
-  color:var(--gold); text-shadow:0 0 18px rgba(212,175,55,0.28);
+#title{ margin:0; font-size:2.1em; font-weight:400; letter-spacing:0.05em; }
+#title a{ color:var(--gold); text-decoration:none; text-shadow:0 0 18px rgba(200,146,90,0.28); }
+#pagetitle{ margin:0.5em 0 0; font-style:italic; color:var(--cream-dim); font-size:0.85em; font-weight:400; }
+.separator{ display:none; }
+
+/* ---------- COLUMN LAYOUT ----------
+   Tabula Rasa's own stylesheet (which normally handles the 2-column
+   float) is switched off, so this replaces it. #primary/#secondary/
+   #tertiary are siblings inside #content .inner. */
+#content .inner{
+  display:grid; grid-template-columns: 1fr 260px; gap:2em;
+  align-items:start; max-width:960px; margin:0 auto; padding:1.5em;
 }
-#masthead .header-subtitle, #pagesubtitle{ font-style:italic; color:var(--cream-dim); font-size:0.98em; }
+#primary{ grid-column:1; grid-row:1 / span 2; }
+#secondary{ grid-column:2; grid-row:1; }
+#tertiary{ grid-column:2; grid-row:2; }
+#invisible-separator{ display:none; }
+@media (max-width:720px){
+  #content .inner{ grid-template-columns:1fr; }
+  #primary, #secondary, #tertiary{ grid-column:1; }
+}
 
 .module-navlinks a{ color:var(--cream); text-decoration:none; }
 .module-navlinks a:hover{ color:var(--gold); }
@@ -142,8 +158,9 @@ a:hover{ color:var(--gold-bright); }
 .entry-wrapper{
   background:var(--win); border:1.5px solid var(--gold);
   box-shadow:5px 5px 0 rgba(0,0,0,0.55); margin-bottom:2.2em;
+  overflow:hidden;
 }
-.entry .header, .entry-title{
+.entry .header{
   background:linear-gradient(180deg, var(--win-bar-top), var(--win-bar-bot));
   border-bottom:1.5px solid var(--gold); margin:0; padding:0.5em 0.8em;
   display:flex; align-items:center; gap:0.55em;
@@ -152,6 +169,9 @@ a:hover{ color:var(--gold-bright); }
   font-size:1.05em; font-weight:400; color:var(--gold);
   text-decoration:none; letter-spacing:0.02em;
 }
+.entry .contents{ padding:1.3em 1.5em 1.4em; }
+.entry .userpic:empty{ display:none; }
+.entry .footer{ padding:0 1.5em 1.3em; }
 /* the poster's userpic in the window title bar */
 .entry .userpic img, .entry-poster .userpic img{
   width:100px !important; height:100px !important;
@@ -160,20 +180,37 @@ a:hover{ color:var(--gold-bright); }
   object-fit:cover;
   flex-shrink:0;
 }
-.entry .contents, .entry-content{ padding:1.2em 1.5em 1.4em; }
+.entry-content{ margin-top:0.4em; }
 .datetime{ display:block; font-family:var(--mono); font-size:0.72em; color:var(--cream-dim); margin-bottom:0.9em; }
 .entry-content img{ max-width:100%; border:1.5px solid var(--gold); }
 
-/* ---------- TAGS ---------- */
-.entry-tags, .tag-row{ border-top:1.5px dotted var(--aubergine-lit); padding-top:0.9em; margin-top:1em; }
-.entry-tags a, .tag{
+/* ---------- TAGS ----------
+   Real markup: .footer .tag contains .tag-text (the "Tags:" label) plus
+   a list of tag links -- not a flat set of pill links, has to be unpacked. */
+.footer .tag{
+  border-top:1.5px dotted var(--aubergine-lit); padding-top:0.9em; margin-top:0.2em;
+  display:flex; flex-wrap:wrap; align-items:center; gap:0.5em;
+}
+.footer .tag .tag-text{
+  font-family:var(--mono); font-size:0.68em; text-transform:uppercase;
+  letter-spacing:0.06em; color:var(--cream-dim);
+}
+.footer .tag ul{ display:flex; flex-wrap:wrap; gap:0.4em; list-style:none; margin:0; padding:0; }
+.footer .tag li{ display:inline-block; }
+.footer .tag a[rel="tag"]{
   display:inline-block; font-family:var(--mono); font-size:0.7em;
   color:var(--gold); background:var(--aubergine-deep); border:1.5px solid var(--gold);
-  padding:0.2em 0.6em; margin:0 0.4em 0.4em 0; text-decoration:none;
+  padding:0.2em 0.6em; text-decoration:none;
 }
-.entry-tags a::before, .tag::before{ content:"# "; color:var(--cream-dim); }
-.tag-region{ background:var(--gold); color:var(--aubergine-deep); }
-.tag-region::before{ content:"◆ "; color:var(--aubergine); }
+.footer .tag a[rel="tag"]::before{ content:"# "; color:var(--cream-dim); }
+/* region tags: give any tag literally named after a vibes-map region the
+   violet treatment. CSS can't match by text, so this keys off common
+   region-tag words -- extend the list as you use more regions as tags. */
+.footer .tag a[href*="cosy-dark"], .footer .tag a[href*="descending"],
+.footer .tag a[href*="iceberg"], .footer .tag a[href*="carnival"],
+.footer .tag a[href*="hypnagogic"], .footer .tag a[href*="ostranenie"]{
+  background:var(--gold); color:var(--aubergine-deep);
+}
 
 /* ---------- CUT TAG ---------- */
 .cuttag-open, .cuttag-close, .cuttag{
@@ -263,15 +300,22 @@ a:hover{ color:var(--gold-bright); }
    reply form. Selectors are the standard Core2 names; if your comment
    markup differs, Inspect a live comment and adjust. */
 
-.entry-management-links{
-  display:flex; flex-wrap:wrap; font-family:var(--mono); font-size:0.68em;
-  border-top:1.5px solid var(--gold); background:var(--aubergine-deep);
+.icon-links{ display:flex; flex-wrap:wrap; gap:0.6em; list-style:none; margin:0; padding:0; justify-content:center; }
+.icon-links img{ opacity:0.75; vertical-align:middle; }
+.icon-links a:hover img{ opacity:1; }
+
+.entry-management-links.icon-links{
+  margin:0.9em 0 0; padding-top:0.8em; border-top:1px solid var(--void-line);
+  justify-content:flex-start;
 }
-.entry-management-links a{
-  color:var(--cream-dim); text-decoration:none; padding:0.5em 0.8em;
-  border-right:1px solid var(--void-line);
+
+.entry-interaction-links.text-links{
+  display:flex; flex-wrap:wrap; gap:1.1em; list-style:none;
+  margin:0.6em 0 0; padding:0; font-family:var(--mono); font-size:0.76em;
 }
-.entry-management-links a:hover{ color:var(--gold); background:var(--aubergine); }
+.entry-interaction-links.text-links li{ display:inline-block; }
+.entry-interaction-links.text-links a{ color:var(--gold); text-decoration:none; }
+.entry-interaction-links.text-links a:hover{ color:var(--gold-bright); }
 
 .comments-divider, .comment-pages-top{
   text-align:center; font-family:var(--mono); font-size:0.78em;

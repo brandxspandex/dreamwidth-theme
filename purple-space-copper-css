@@ -1,0 +1,334 @@
+/* ============================================================
+   THE DESKTOP (candlelit) — a theme for Dreamwidth (Tabula Rasa / Core2)
+   ============================================================
+   Palette: near-black #0B0C10, aubergine #4A154B, aged bronze #a9743f,
+   plus a warm cream #ECE3CD added ONLY for readable body text.
+   A cozy old-web desktop crossed with a gothic writer's desk:
+   entries are gilt-framed windows on a black desk, aubergine velvet
+   title bars, and a "desk" dock holding your talismans (a quill and
+   inkpot, a boba, and Saturn) like ordinary icons.
+
+   Emblems are embedded as data-URIs — no image hosting needed.
+
+   Setup:
+   1. Customize -> Tabula Rasa (Plain), 2-column, sidebar right
+   2. Custom CSS tab -> turn OFF the default stylesheet
+   3. Paste everything below
+   4. Title/subtitle/footer via wizard Text tab.
+   Selectors are standard Core2; Inspect your live page if one misses.
+   ============================================================ */
+
+:root{
+  --void:#0B0C10; --void-line:#191320;
+  --aubergine:#4A154B; --aubergine-lit:#5e1c60; --aubergine-deep:#2f0d30;
+  --win:#241026; --win-bar-top:#5e1c60; --win-bar-bot:#3a1040;
+  --gold:#a9743f; --gold-bright:#c8925a; --boba:#cba876;
+  --cream:#ece3cd; --cream-dim:#b6a07a;
+  --serif:Georgia,'Palatino Linotype','Book Antiqua',Palatino,serif;
+  --mono:'Courier New',ui-monospace,monospace;
+}
+
+body{
+  color:var(--cream); font-family:var(--serif); line-height:1.6;
+  background-color:var(--void);
+  background-image:
+      radial-gradient(3.5px 3.5px at 16% 22%, rgba(246,246,255,1), transparent 64%),
+      radial-gradient(16px 16px at 16% 22%, rgba(246,246,255,0.2), transparent 70%),
+      radial-gradient(3.0px 3.0px at 73% 14%, rgba(200,150,80,1), transparent 64%),
+      radial-gradient(15px 15px at 73% 14%, rgba(200,150,80,0.2), transparent 70%),
+      radial-gradient(3.5px 3.5px at 86% 60%, rgba(235,150,90,1), transparent 64%),
+      radial-gradient(16px 16px at 86% 60%, rgba(235,150,90,0.18), transparent 70%),
+      radial-gradient(3.0px 3.0px at 34% 80%, rgba(205,185,222,1), transparent 64%),
+      radial-gradient(14px 14px at 34% 80%, rgba(205,185,222,0.18), transparent 70%),
+      radial-gradient(3.0px 3.0px at 60% 38%, rgba(240,232,212,1), transparent 64%),
+      radial-gradient(14px 14px at 60% 38%, rgba(240,232,212,0.16), transparent 70%),
+      radial-gradient(4.0px 4.0px at 46% 55%, rgba(111,168,154,1), transparent 64%),
+      radial-gradient(18px 18px at 46% 55%, rgba(111,168,154,0.16), transparent 70%),
+      radial-gradient(4.0px 4.0px at 24% 46%, rgba(168,60,72,1), transparent 64%),
+      radial-gradient(18px 18px at 24% 46%, rgba(168,60,72,0.16), transparent 70%),
+      radial-gradient(1px 1px at 27px 271px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(1.5px 1.5px at 182px 275px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 138px 60px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(1.5px 1.5px at 60px 171px, rgba(240,232,212,0.9), transparent 62%),
+      radial-gradient(1px 1px at 41px 108px, rgba(200,150,80,0.85), transparent 62%),
+      radial-gradient(1.5px 1.5px at 42px 55px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(2px 2px at 207px 230px, rgba(205,185,222,0.7), transparent 62%),
+      radial-gradient(2.5px 2.5px at 213px 124px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 60px 111px, rgba(240,232,212,0.9), transparent 62%),
+      radial-gradient(2px 2px at 257px 58px, rgba(200,150,80,1.0), transparent 62%),
+      radial-gradient(2px 2px at 237px 250px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 261px 257px, rgba(246,246,255,0.7), transparent 62%),
+      radial-gradient(1px 1px at 98px 6px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1px 1px at 197px 236px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 139px 70px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 155px 92px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(1px 1px at 28px 44px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1px 1px at 56px 242px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(1.5px 1.5px at 13px 94px, rgba(200,150,80,1.0), transparent 62%),
+      radial-gradient(1px 1px at 48px 69px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(2px 2px at 62px 108px, rgba(246,246,255,0.7), transparent 62%),
+      radial-gradient(2px 2px at 39px 224px, rgba(205,185,222,0.7), transparent 62%),
+      radial-gradient(2px 2px at 9px 201px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(2px 2px at 25px 296px, rgba(200,150,80,0.85), transparent 62%),
+      radial-gradient(2px 2px at 112px 140px, rgba(240,232,212,1.0), transparent 62%),
+      radial-gradient(1px 1px at 148px 112px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 262px 74px, rgba(235,150,90,0.75), transparent 62%),
+      radial-gradient(2px 2px at 292px 161px, rgba(235,150,90,0.75), transparent 62%),
+      radial-gradient(1.5px 1.5px at 263px 296px, rgba(235,150,90,0.9), transparent 62%),
+      radial-gradient(1px 1px at 119px 84px, rgba(246,246,255,0.95), transparent 62%),
+      radial-gradient(2.5px 2.5px at 267px 307px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 199px 171px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(2px 2px at 174px 53px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(2px 2px at 235px 216px, rgba(240,232,212,0.8), transparent 62%),
+      radial-gradient(1.5px 1.5px at 52px 167px, rgba(246,246,255,0.7), transparent 62%),
+      radial-gradient(1.5px 1.5px at 192px 28px, rgba(240,232,212,1.0), transparent 62%),
+      radial-gradient(1px 1px at 120px 205px, rgba(205,185,222,0.7), transparent 62%),
+      radial-gradient(1px 1px at 245px 288px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(2px 2px at 51px 23px, rgba(246,246,255,0.7), transparent 62%),
+      radial-gradient(1px 1px at 76px 171px, rgba(200,150,80,0.7), transparent 62%),
+      radial-gradient(1px 1px at 22px 146px, rgba(240,232,212,0.8), transparent 62%),
+      radial-gradient(2.5px 2.5px at 67px 306px, rgba(246,246,255,0.95), transparent 62%),
+      radial-gradient(2px 2px at 235px 164px, rgba(246,246,255,0.95), transparent 62%),
+      radial-gradient(2px 2px at 186px 57px, rgba(240,232,212,0.9), transparent 62%),
+      radial-gradient(2px 2px at 182px 240px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(2px 2px at 160px 35px, rgba(235,150,90,0.75), transparent 62%),
+      radial-gradient(2px 2px at 68px 102px, rgba(240,232,212,0.9), transparent 62%),
+      radial-gradient(1.5px 1.5px at 202px 271px, rgba(246,246,255,0.85), transparent 62%),
+      radial-gradient(1.5px 1.5px at 30px 274px, rgba(240,232,212,0.9), transparent 62%),
+      radial-gradient(1px 1px at 163px 290px, rgba(240,232,212,0.7), transparent 62%),
+      radial-gradient(ellipse 65% 50% at 20% 16%, rgba(74,21,75,0.70), transparent 72%),
+      radial-gradient(ellipse 60% 46% at 84% 80%, rgba(94,28,96,0.62), transparent 72%),
+      radial-gradient(ellipse 55% 42% at 58% 50%, rgba(74,21,75,0.45), transparent 72%),
+      radial-gradient(ellipse 40% 30% at 40% 62%, rgba(169,116,63,0.12), transparent 72%);
+    background-size:auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, 320px 320px, auto, auto, auto, auto;
+    background-repeat:no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-attachment:fixed;
+    animation:skyshimmer 6s ease-in-out infinite;
+}
+a{ color:var(--gold); }
+a:hover{ color:var(--gold-bright); }
+
+/* ---------- twinkle ----------
+   The whole sky does a subtle brightness shimmer (skyshimmer).
+   Per-star twinkle needs real elements, which Dreamwidth's Custom CSS
+   can't inject on its own. To get the crisp coloured twinkling stars
+   from the mockup, add this HTML to a Custom Text module (e.g. an
+   empty-titled one placed at the top), then the CSS below animates them:
+
+   <i class="tw" style="left:16%;top:22%;color:#f6f6ff"></i>
+   <i class="tw" style="left:73%;top:14%;color:#c0924f"></i>
+   <i class="tw" style="left:86%;top:60%;color:#eb965a"></i>
+   ...(see mockup source for the full set)...
+*/
+@keyframes skyshimmer{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.06); } }
+@keyframes tw{ 0%,100%{ opacity:0.25; transform:scale(0.7); } 50%{ opacity:1; transform:scale(1.15); } }
+.tw{ position:fixed; width:6px; height:6px; border-radius:50%; pointer-events:none; z-index:0;
+     box-shadow:0 0 6px 1px currentColor; animation:tw 3.2s ease-in-out infinite; }
+.tw::before{ content:""; position:absolute; inset:0; border-radius:50%; background:currentColor; }
+@media (prefers-reduced-motion: reduce){ .tw{ animation:none; opacity:0.9; } body{ animation:none !important; } }
+
+
+/* ---------- MASTHEAD ---------- */
+#masthead{ position:relative; padding:3em 1.5em 2.4em; text-align:center; }
+#masthead::after{
+  content:""; position:absolute; top:18px; right:26px;
+  width:70px; height:70px; background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20width%3D%2264%22%20height%3D%2264%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c8925a%22%20stroke-linecap%3D%22round%22%3E%20%3C%21--%20ring%3A%20back%20arc%20%28thin%2C%20dimmer%20%E2%80%94%20passes%20behind%29%20--%3E%20%3Cg%20transform%3D%22rotate%28-20%2032%2032%29%22%3E%20%3Cpath%20d%3D%22M9%2032%20A23%208%200%200%201%2055%2032%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%221%22/%3E%20%3Cpath%20d%3D%22M12.5%2032%20A19.5%206.4%200%200%201%2051.5%2032%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.6%22%20opacity%3D%220.7%22/%3E%20%3C/g%3E%20%3C%21--%20planet%3A%20open%20circle%20--%3E%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2213.5%22%20stroke-width%3D%221.2%22/%3E%20%3C%21--%20engraved%20latitude%20shading%3A%20curved%20hatch%20lines%2C%20denser%20toward%20limb%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.55%22%20opacity%3D%220.85%22%3E%20%3Cpath%20d%3D%22M21.5%2025.5%20Q32%2028.5%2042.5%2025.5%22/%3E%20%3Cpath%20d%3D%22M19.6%2029.5%20Q32%2033%2044.4%2029.5%22/%3E%20%3Cpath%20d%3D%22M19.3%2034%20Q32%2037.5%2044.7%2034%22/%3E%20%3Cpath%20d%3D%22M20.4%2038.5%20Q32%2042%2043.6%2038.5%22/%3E%20%3Cpath%20d%3D%22M23%2042.5%20Q32%2045%2041%2042.5%22/%3E%20%3C/g%3E%20%3C%21--%20terminator%20shading%3A%20short%20hatches%20on%20the%20lower-left%20limb%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.5%22%20opacity%3D%220.6%22%3E%20%3Cpath%20d%3D%22M21.5%2038%20Q23.5%2041.5%2026.5%2043.8%22/%3E%20%3Cpath%20d%3D%22M20.3%2035%20Q22%2040%2026%2043.2%22/%3E%20%3C/g%3E%20%3C%21--%20ring%3A%20front%20arcs%20%28brighter%2C%20over%20planet%29%20--%3E%20%3Cg%20transform%3D%22rotate%28-20%2032%2032%29%22%3E%20%3Cpath%20d%3D%22M9%2032%20A23%208%200%200%200%2055%2032%22%20stroke-width%3D%221.4%22/%3E%20%3Cpath%20d%3D%22M12.5%2032%20A19.5%206.4%200%200%200%2051.5%2032%22%20stroke-width%3D%220.7%22%20opacity%3D%220.85%22/%3E%20%3C/g%3E%20%3C/g%3E%20%3C/svg%3E") center/contain no-repeat;
+}
+#masthead .header-inner, #masthead h1, #pagetitle{
+  font-size:2.5em; font-weight:400; letter-spacing:0.05em;
+  color:var(--gold); text-shadow:0 0 18px rgba(212,175,55,0.28);
+}
+#masthead .header-subtitle, #pagesubtitle{ font-style:italic; color:var(--cream-dim); font-size:0.98em; }
+
+.module-navlinks a{ color:var(--cream); text-decoration:none; }
+.module-navlinks a:hover{ color:var(--gold); }
+
+/* ---------- ENTRIES AS WINDOWS ---------- */
+.entry-wrapper{
+  background:var(--win); border:1.5px solid var(--gold);
+  box-shadow:5px 5px 0 rgba(0,0,0,0.55); margin-bottom:2.2em;
+}
+.entry .header, .entry-title{
+  background:linear-gradient(180deg, var(--win-bar-top), var(--win-bar-bot));
+  border-bottom:1.5px solid var(--gold); margin:0; padding:0.5em 0.8em;
+  display:flex; align-items:center; gap:0.55em;
+}
+.entry-title, .entry-title a{
+  font-size:1.05em; font-weight:400; color:var(--gold);
+  text-decoration:none; letter-spacing:0.02em;
+}
+/* the poster's userpic in the window title bar */
+.entry .userpic img, .entry-poster .userpic img{
+  width:100px !important; height:100px !important;
+  border:1.5px solid var(--gold);
+  vertical-align:middle;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.entry .contents, .entry-content{ padding:1.2em 1.5em 1.4em; }
+.datetime{ display:block; font-family:var(--mono); font-size:0.72em; color:var(--cream-dim); margin-bottom:0.9em; }
+.entry-content img{ max-width:100%; border:1.5px solid var(--gold); }
+
+/* ---------- TAGS ---------- */
+.entry-tags, .tag-row{ border-top:1.5px dotted var(--aubergine-lit); padding-top:0.9em; margin-top:1em; }
+.entry-tags a, .tag{
+  display:inline-block; font-family:var(--mono); font-size:0.7em;
+  color:var(--gold); background:var(--aubergine-deep); border:1.5px solid var(--gold);
+  padding:0.2em 0.6em; margin:0 0.4em 0.4em 0; text-decoration:none;
+}
+.entry-tags a::before, .tag::before{ content:"# "; color:var(--cream-dim); }
+.tag-region{ background:var(--gold); color:var(--aubergine-deep); }
+.tag-region::before{ content:"\25C6 "; color:var(--aubergine); }
+
+/* ---------- CUT TAG ---------- */
+.cuttag-open, .cuttag-close, .cuttag{
+  display:inline-block; font-family:var(--mono); font-size:0.74em;
+  color:var(--gold); background:var(--aubergine-deep); border:1.5px solid var(--gold);
+  padding:0.25em 0.8em; text-decoration:none; box-shadow:2px 2px 0 rgba(0,0,0,0.5);
+}
+
+/* ---------- SIDEBAR MODULES ---------- */
+.module{ background:var(--win); border:1.5px solid var(--gold); box-shadow:4px 4px 0 rgba(0,0,0,0.55); margin-bottom:1.6em; }
+.module-header, .module-name, .module h2{
+  margin:0; font-family:var(--mono); font-size:0.72em; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--gold); background:linear-gradient(180deg, var(--win-bar-top), var(--win-bar-bot));
+  border-bottom:1.5px solid var(--gold); padding:0.4em 0.7em;
+}
+.module-content{ padding:0.9em 1em; }
+
+
+/* ---------- PROFILE MODULE : the locket ----------
+   Dreamwidth has a built-in Profile module that prints your account's
+   default userpic + display name. Enable it via:
+   Customize -> Modules -> check "Profile" -> check "Display Default Icon"
+   (place it in the sidebar). This CSS frames whatever DW puts there as
+   a brass locket, matching the desk. */
+.module-userprofile{
+  background:var(--win); border:1.5px solid var(--gold);
+  box-shadow:4px 4px 0 rgba(0,0,0,0.55); margin-bottom:1.6em;
+  text-align:center; padding:1.4em 1em 1.1em;
+}
+.module-userprofile .userpic{
+  display:inline-block; position:relative; margin-bottom:0.6em;
+}
+.module-userprofile .userpic img{
+  width:100px !important; height:100px !important;
+  border-radius:50%;
+  border:3px solid var(--gold);
+  box-shadow:0 0 0 2px var(--void), 0 0 0 5px var(--aubergine-lit), 3px 3px 0 rgba(0,0,0,0.5);
+  object-fit:cover;
+}
+/* four small "rivets" around the locket rim */
+.module-userprofile .userpic::before,
+.module-userprofile .userpic::after{
+  content:""; position:absolute; width:5px; height:5px; border-radius:50%;
+  background:var(--gold); box-shadow:0 0 0 1px var(--void);
+}
+.module-userprofile .userpic::before{ top:-2px; left:50%; transform:translateX(-50%); }
+.module-userprofile .userpic::after{ bottom:-2px; left:50%; transform:translateX(-50%); }
+.module-userprofile .journaltitle, .module-userprofile .name{
+  display:block; font-family:var(--mono); font-size:0.8em; color:var(--cream);
+  letter-spacing:0.04em; margin-top:0.3em;
+}
+
+/* ---------- THE DESK ----------
+   Add a Custom Text module titled "the desk", paste this HTML into it:
+   <div class="desk">
+     <a href="#" class="desk-item di-quill"><span>scribbles</span></a>
+     <a href="#" class="desk-item di-boba"><span>boba.exe</span></a>
+     <a href="#" class="desk-item di-saturn"><span>orbit</span></a>
+   </div>
+*/
+.desk{ display:flex; justify-content:space-around; gap:0.4em; }
+.desk-item{ width:33%; text-align:center; text-decoration:none; padding-top:56px; position:relative; }
+.desk-item::before{
+  content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:50px; height:50px; background-position:center; background-size:contain; background-repeat:no-repeat;
+}
+.di-quill::before{ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20width%3D%2264%22%20height%3D%2264%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c8925a%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3C%21--%20inkwell%3A%20faceted%20glass%20body%2C%20suggested%20by%20outline%20%2B%20facet%20lines%20--%3E%20%3Cpath%20d%3D%22M23%2041%20L41%2041%20L43%2047%20L42.5%2056%20Q42.5%2058.5%2039.5%2058.5%20L24.5%2058.5%20Q21.5%2058.5%2021.5%2056%20L21%2047%20Z%22/%3E%20%3C%21--%20facet%20lines%20--%3E%20%3Cpath%20d%3D%22M27%2041%20L26%2058.3%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.7%22/%3E%20%3Cpath%20d%3D%22M37%2041%20L38%2058.3%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.7%22/%3E%20%3C%21--%20ink%20level%3A%20single%20line%20%2B%20light%20hatching%20below%20--%3E%20%3Cpath%20d%3D%22M22.6%2050%20L41.4%2050%22%20stroke-width%3D%220.8%22/%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.55%22%20opacity%3D%220.75%22%3E%20%3Cpath%20d%3D%22M24%2052.5%20L40%2052.5%22/%3E%20%3Cpath%20d%3D%22M24.5%2055%20L39.5%2055%22/%3E%20%3C/g%3E%20%3C%21--%20collar%20%2B%20mouth%20--%3E%20%3Cpath%20d%3D%22M26%2037.5%20L38%2037.5%20L38%2041%20L26%2041%20Z%22/%3E%20%3Cellipse%20cx%3D%2232%22%20cy%3D%2237.5%22%20rx%3D%226%22%20ry%3D%221.8%22/%3E%20%3C%21--%20quill%20shaft%3A%20one%20elegant%20curve%20--%3E%20%3Cpath%20d%3D%22M33.5%2036.5%20Q41%2022%2053%207%22%20stroke-width%3D%221.2%22/%3E%20%3C%21--%20feather%3A%20open%20outline%2C%20not%20filled%20--%3E%20%3Cpath%20d%3D%22M53%207%20Q42.5%209.5%2038%2018%20Q35.8%2022.5%2036%2028.5%20Q41%2024.5%2045%2018.5%20Q50%2011.5%2053%207%20Z%22%20stroke-width%3D%221%22/%3E%20%3C%21--%20rachis%20%28center%20vein%20of%20feather%29%20--%3E%20%3Cpath%20d%3D%22M52%208.5%20Q44%2015%2038.5%2025%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.7%22/%3E%20%3C%21--%20barbs%3A%20fine%20hatch%20strokes%20off%20the%20rachis%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.55%22%20opacity%3D%220.85%22%3E%20%3Cpath%20d%3D%22M48.5%2011.5%20L44.5%2012.4%22/%3E%20%3Cpath%20d%3D%22M46.5%2013.8%20L42.3%2015%22/%3E%20%3Cpath%20d%3D%22M44.7%2016.2%20L40.6%2017.8%22/%3E%20%3Cpath%20d%3D%22M43%2018.7%20L39.2%2020.7%22/%3E%20%3Cpath%20d%3D%22M41.4%2021.3%20L38%2023.6%22/%3E%20%3Cpath%20d%3D%22M40%2023.8%20L37%2026.3%22/%3E%20%3C/g%3E%20%3C%21--%20nib%20--%3E%20%3Cpath%20d%3D%22M35.2%2032.5%20L33.5%2036.5%20L36.6%2034.2%20Z%22%20fill%3D%22%23c8925a%22%20stroke%3D%22none%22/%3E%20%3C/g%3E%20%3C/svg%3E"); }
+.di-boba::before{ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20width%3D%2264%22%20height%3D%2264%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c8925a%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3C%21--%20straw%3A%20two%20parallel%20lines%2C%20angle-cut%20--%3E%20%3Cpath%20d%3D%22M40.6%205%20L36.2%2024%22/%3E%20%3Cpath%20d%3D%22M43.4%206%20L39%2024.5%22/%3E%20%3Cpath%20d%3D%22M40.6%205%20L43.4%206%22/%3E%20%3C%21--%20dome%20lid%20--%3E%20%3Cpath%20d%3D%22M20%2022.5%20Q20%2015%2032%2015%20Q44%2015%2044%2022.5%22/%3E%20%3Cpath%20d%3D%22M18.5%2022.5%20L45.5%2022.5%22%20stroke-width%3D%221.3%22/%3E%20%3C%21--%20cup%3A%20tapered%20outline%2C%20rounded%20base%20--%3E%20%3Cpath%20d%3D%22M20.5%2022.5%20L44%2022.5%20L42%2053%20Q41.7%2057.5%2036.8%2057.5%20L27.2%2057.5%20Q22.3%2057.5%2022%2053%20Z%22/%3E%20%3C%21--%20tea%20line%20--%3E%20%3Cpath%20d%3D%22M22%2030%20L42.4%2030%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.8%22/%3E%20%3C%21--%20gentle%20hatching%20for%20liquid%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.5%22%20opacity%3D%220.6%22%3E%20%3Cpath%20d%3D%22M23%2035%20L41.6%2035%22/%3E%20%3Cpath%20d%3D%22M23.4%2040%20L41%2040%22/%3E%20%3Cpath%20d%3D%22M23.8%2045%20L40.5%2045%22/%3E%20%3C/g%3E%20%3C%21--%20pearls%3A%20open%20circles%2C%20engraved%20--%3E%20%3Cg%20stroke-width%3D%220.9%22%3E%20%3Ccircle%20cx%3D%2227%22%20cy%3D%2250.5%22%20r%3D%222.6%22/%3E%20%3Ccircle%20cx%3D%2233.5%22%20cy%3D%2252%22%20r%3D%222.6%22/%3E%20%3Ccircle%20cx%3D%2239%22%20cy%3D%2250%22%20r%3D%222.4%22/%3E%20%3Ccircle%20cx%3D%2230%22%20cy%3D%2254.8%22%20r%3D%222.2%22/%3E%20%3Ccircle%20cx%3D%2236.6%22%20cy%3D%2255.2%22%20r%3D%222.2%22/%3E%20%3C/g%3E%20%3C/g%3E%20%3C/svg%3E"); }
+.di-saturn::before{ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%20width%3D%2264%22%20height%3D%2264%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c8925a%22%20stroke-linecap%3D%22round%22%3E%20%3C%21--%20ring%3A%20back%20arc%20%28thin%2C%20dimmer%20%E2%80%94%20passes%20behind%29%20--%3E%20%3Cg%20transform%3D%22rotate%28-20%2032%2032%29%22%3E%20%3Cpath%20d%3D%22M9%2032%20A23%208%200%200%201%2055%2032%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%221%22/%3E%20%3Cpath%20d%3D%22M12.5%2032%20A19.5%206.4%200%200%201%2051.5%2032%22%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.6%22%20opacity%3D%220.7%22/%3E%20%3C/g%3E%20%3C%21--%20planet%3A%20open%20circle%20--%3E%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2213.5%22%20stroke-width%3D%221.2%22/%3E%20%3C%21--%20engraved%20latitude%20shading%3A%20curved%20hatch%20lines%2C%20denser%20toward%20limb%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.55%22%20opacity%3D%220.85%22%3E%20%3Cpath%20d%3D%22M21.5%2025.5%20Q32%2028.5%2042.5%2025.5%22/%3E%20%3Cpath%20d%3D%22M19.6%2029.5%20Q32%2033%2044.4%2029.5%22/%3E%20%3Cpath%20d%3D%22M19.3%2034%20Q32%2037.5%2044.7%2034%22/%3E%20%3Cpath%20d%3D%22M20.4%2038.5%20Q32%2042%2043.6%2038.5%22/%3E%20%3Cpath%20d%3D%22M23%2042.5%20Q32%2045%2041%2042.5%22/%3E%20%3C/g%3E%20%3C%21--%20terminator%20shading%3A%20short%20hatches%20on%20the%20lower-left%20limb%20--%3E%20%3Cg%20stroke%3D%22%23a9743f%22%20stroke-width%3D%220.5%22%20opacity%3D%220.6%22%3E%20%3Cpath%20d%3D%22M21.5%2038%20Q23.5%2041.5%2026.5%2043.8%22/%3E%20%3Cpath%20d%3D%22M20.3%2035%20Q22%2040%2026%2043.2%22/%3E%20%3C/g%3E%20%3C%21--%20ring%3A%20front%20arcs%20%28brighter%2C%20over%20planet%29%20--%3E%20%3Cg%20transform%3D%22rotate%28-20%2032%2032%29%22%3E%20%3Cpath%20d%3D%22M9%2032%20A23%208%200%200%200%2055%2032%22%20stroke-width%3D%221.4%22/%3E%20%3Cpath%20d%3D%22M12.5%2032%20A19.5%206.4%200%200%200%2051.5%2032%22%20stroke-width%3D%220.7%22%20opacity%3D%220.85%22/%3E%20%3C/g%3E%20%3C/g%3E%20%3C/svg%3E"); }
+.desk-item span{ font-family:var(--mono); font-size:0.62em; color:var(--cream-dim); }
+.desk-item:hover span{ color:var(--gold); }
+
+/* ---------- FOOTER : taskbar ---------- */
+#footer{
+  font-family:var(--mono); font-size:0.72em; color:var(--cream-dim);
+  background:var(--aubergine-deep); border:1.5px solid var(--gold);
+  box-shadow:3px 3px 0 rgba(0,0,0,0.55);
+  max-width:940px; margin:1em auto 2em; padding:0.5em 0.9em;
+}
+
+/* ---------- COMMENTS (basic) ---------- */
+.comment{ background:var(--win); border:1.5px solid var(--gold); box-shadow:3px 3px 0 rgba(0,0,0,0.4); }
+.comment-title{ color:var(--gold); font-weight:400; }
+
+/* ---------- PERMALINK / ENTRY PAGE ----------
+   Everything above already covers the individual entry the same way as
+   the index (same .entry-wrapper). These add the bits unique to the
+   permalink view: entry management links, the comment thread, and the
+   reply form. Selectors are the standard Core2 names; if your comment
+   markup differs, Inspect a live comment and adjust. */
+
+.entry-management-links{
+  display:flex; flex-wrap:wrap; font-family:var(--mono); font-size:0.68em;
+  border-top:1.5px solid var(--gold); background:var(--aubergine-deep);
+}
+.entry-management-links a{
+  color:var(--cream-dim); text-decoration:none; padding:0.5em 0.8em;
+  border-right:1px solid var(--void-line);
+}
+.entry-management-links a:hover{ color:var(--gold); background:var(--aubergine); }
+
+.comments-divider, .comment-pages-top{
+  text-align:center; font-family:var(--mono); font-size:0.78em;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);
+  margin:2em 0 1.2em; opacity:0.85;
+}
+
+.comment-thread{ margin-bottom:1em; }
+.comment{ background:var(--win); border:1.5px solid var(--aubergine-lit); box-shadow:3px 3px 0 rgba(0,0,0,0.4); margin-bottom:1em; }
+.comment.op, .comment.by-poster{ border-color:var(--gold); } /* journal owner's own replies */
+.comment-head{
+  display:flex; align-items:center; gap:0.6em;
+  background:var(--aubergine-deep); border-bottom:1px solid var(--aubergine-lit);
+  padding:0.5em 0.8em;
+}
+.comment .userpic img{ width:100px !important; height:100px !important; border-radius:50%; border:2px solid var(--gold); }
+.comment-poster{ font-family:var(--mono); font-size:0.78em; color:var(--gold); display:block; }
+.comment-datetime{ font-family:var(--mono); font-size:0.66em; color:var(--cream-dim); display:block; }
+.comment-title, .comment .subject{ margin:0; padding:0.6em 0.9em 0; font-size:0.95em; color:var(--cream); font-style:italic; }
+.comment-content{ padding:0.4em 0.9em 0.8em; font-size:0.92em; }
+.comment-links{
+  display:flex; gap:0.9em; padding:0.5em 0.9em 0.7em;
+  font-family:var(--mono); font-size:0.68em; border-top:1px dotted var(--void-line);
+}
+.comment-links a{ color:var(--cream-dim); text-decoration:none; }
+.comment-links a:hover{ color:var(--gold); }
+/* nested replies indent — a small echo of "descending" further into a thread */
+.comment-thread .comment-thread{ margin-left:2em; margin-top:0.9em; position:relative; }
+.comment-thread .comment-thread::before{
+  content:""; position:absolute; left:-1em; top:0; bottom:1em; width:1px; background:var(--aubergine-lit);
+}
+
+/* ---------- REPLY FORM ---------- */
+.reply-form, #postform, .qr-form{
+  background:var(--win); border:1.5px solid var(--gold); box-shadow:4px 4px 0 rgba(0,0,0,0.55);
+  margin-top:1.8em; padding:1.3em 1.5em;
+}
+.reply-form label{ display:block; font-family:var(--mono); font-size:0.7em; color:var(--cream-dim); margin-bottom:0.3em; }
+.reply-form input[type=text], .reply-form textarea,
+#postform input[type=text], #postform textarea{
+  width:100%; background:var(--aubergine-deep); border:1.5px solid var(--aubergine-lit);
+  color:var(--cream); font-family:var(--serif); font-size:0.92em; padding:0.6em 0.7em;
+  margin-bottom:1em;
+}
+.reply-form input:focus, .reply-form textarea:focus,
+#postform input:focus, #postform textarea:focus{ outline:none; border-color:var(--gold); }
+.reply-form textarea, #postform textarea{ min-height:100px; resize:vertical; }
+.reply-form button, #postform button, #postform input[type=submit]{
+  font-family:var(--mono); font-size:0.78em; letter-spacing:0.06em; text-transform:uppercase;
+  background:var(--gold); color:var(--aubergine-deep); border:1.5px solid var(--gold);
+  padding:0.5em 1.2em; cursor:pointer; box-shadow:2px 2px 0 rgba(0,0,0,0.5);
+}
+.reply-form button:hover, #postform button:hover{ background:var(--gold-bright); }

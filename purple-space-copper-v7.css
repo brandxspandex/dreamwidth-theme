@@ -180,10 +180,15 @@ a:hover{ color:var(--gold-bright); }
 
 /* content area */
 .entry .contents{ padding:1.2em 1.4em 1.1em; }
-.entry-content{ margin:0; }
+.entry .contents .inner{ padding:0; margin:0; }
+.entry-content{ margin:0; width:100%; }
+.entry-content a{ color:var(--gold); }
 .entry-content img{ max-width:100%; height:auto; border:1.5px solid var(--gold); }
-.entry .userpic:empty{ display:none; }
-.entry .poster:empty{ display:none; }
+/* collapse empty userpic/poster slots (whitespace-safe) so they add no gap */
+.entry .userpic:empty, .entry .poster:empty{ display:none; }
+.entry .userpic, .entry .poster{ margin:0; padding:0; }
+/* the entry userpic div sits empty on this layout -- never let it reserve space */
+.entry .contents > .inner > .userpic{ display:none; }
 
 /* metadata (mood/music) as a tidy inline strip, not a bulleted list */
 .entry .metadata{ margin:1em 0 0; }

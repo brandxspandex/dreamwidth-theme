@@ -173,7 +173,7 @@ a:hover{ color:var(--gold-bright); }
 }
 .entry-tags a::before, .tag::before{ content:"# "; color:var(--cream-dim); }
 .tag-region{ background:var(--gold); color:var(--aubergine-deep); }
-.tag-region::before{ content:"\25C6 "; color:var(--aubergine); }
+.tag-region::before{ content:"◆ "; color:var(--aubergine); }
 
 /* ---------- CUT TAG ---------- */
 .cuttag-open, .cuttag-close, .cuttag{

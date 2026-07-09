@@ -110,15 +110,10 @@ a:hover{ color:var(--gold-bright); }
 
 /* ---------- twinkle ----------
    The whole sky does a subtle brightness shimmer (skyshimmer).
-   Per-star twinkle needs real elements, which Dreamwidth's Custom CSS
-   can't inject on its own. To get the crisp coloured twinkling stars
-   from the mockup, add this HTML to a Custom Text module (e.g. an
-   empty-titled one placed at the top), then the CSS below animates them:
-
-   <i class="tw" style="left:16%;top:22%;color:#f6f6ff"></i>
-   <i class="tw" style="left:73%;top:14%;color:#c0924f"></i>
-   <i class="tw" style="left:86%;top:60%;color:#eb965a"></i>
-   ...(see mockup source for the full set)...
+   Per-star twinkle needs real page elements, which Custom CSS can't
+   inject on its own. Ask Claude for the twinkle-sprite snippet
+   separately if you want the crisp per-star version live (kept out
+   of this stylesheet so no literal markup sits inside the CSS file).
 */
 @keyframes skyshimmer{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.06); } }
 @keyframes tw{ 0%,100%{ opacity:0.25; transform:scale(0.7); } 50%{ opacity:1; transform:scale(1.15); } }
@@ -232,12 +227,10 @@ a:hover{ color:var(--gold-bright); }
 }
 
 /* ---------- THE DESK ----------
-   Add a Custom Text module titled "the desk", paste this HTML into it:
-   <div class="desk">
-     <a href="#" class="desk-item di-quill"><span>scribbles</span></a>
-     <a href="#" class="desk-item di-boba"><span>boba.exe</span></a>
-     <a href="#" class="desk-item di-saturn"><span>orbit</span></a>
-   </div>
+   Add a Custom Text module titled "the desk". Ask Claude for the
+   desk snippet separately (three links, classes di-quill / di-boba /
+   di-saturn) — kept out of this stylesheet so no literal markup sits
+   inside the CSS file itself.
 */
 .desk{ display:flex; justify-content:space-around; gap:0.4em; }
 .desk-item{ width:33%; text-align:center; text-decoration:none; padding-top:56px; position:relative; }

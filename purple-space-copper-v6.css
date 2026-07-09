@@ -163,29 +163,46 @@ a:hover{ color:var(--gold-bright); }
   box-shadow:5px 5px 0 rgba(0,0,0,0.55); margin-bottom:2.2em;
   overflow:hidden;
 }
+/* title bar: title + date sit together compactly */
 .entry .header{
   background:linear-gradient(180deg, var(--win-bar-top), var(--win-bar-bot));
-  border-bottom:1.5px solid var(--gold); margin:0; padding:0.5em 0.8em;
-  display:flex; align-items:center; gap:0.55em;
+  border-bottom:1.5px solid var(--gold); margin:0; padding:0.55em 0.9em;
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:0.3em 0.9em;
 }
+.entry-title{ margin:0; }
 .entry-title, .entry-title a{
-  font-size:1.05em; font-weight:400; color:var(--gold);
+  font-size:1.1em; font-weight:400; color:var(--gold);
   text-decoration:none; letter-spacing:0.02em;
 }
-.entry .contents{ padding:1.3em 1.5em 1.4em; }
+.entry .header .datetime{ margin:0; font-family:var(--mono); font-size:0.72em; color:var(--cream-dim); }
+.entry .header .datetime a{ color:var(--cream-dim); text-decoration:none; }
+.entry .access-filter{ margin-left:auto; } /* the little privacy padlock -> far right of bar */
+
+/* content area */
+.entry .contents{ padding:1.2em 1.4em 1.1em; }
+.entry-content{ margin:0; }
+.entry-content img{ max-width:100%; height:auto; border:1.5px solid var(--gold); }
 .entry .userpic:empty{ display:none; }
-.entry .footer{ padding:0 1.5em 1.3em; }
-/* the poster's userpic in the window title bar */
+.entry .poster:empty{ display:none; }
+
+/* metadata (mood/music) as a tidy inline strip, not a bulleted list */
+.entry .metadata{ margin:1em 0 0; }
+.entry .metadata ul{ list-style:none; margin:0; padding:0; }
+.entry .metadata li{ font-family:var(--mono); font-size:0.78em; color:var(--cream-dim); }
+.entry .metadata-label{ color:var(--gold); }
+
+/* footer: tags + link rows, snug under the content */
+.entry .footer{ padding:0 1.4em 1.1em; }
+.entry .footer .inner{ padding:0; }
+
+/* the poster's userpic in the title bar (100x100 DW icons, shown small here) */
 .entry .userpic img, .entry-poster .userpic img{
-  width:100px !important; height:100px !important;
+  width:100px; height:100px;
   border:1.5px solid var(--gold);
-  vertical-align:middle;
-  object-fit:cover;
-  flex-shrink:0;
+  vertical-align:middle; object-fit:cover;
 }
-.entry-content{ margin-top:0.4em; }
 .datetime{ display:block; font-family:var(--mono); font-size:0.72em; color:var(--cream-dim); margin-bottom:0.9em; }
-.entry-content img{ max-width:100%; border:1.5px solid var(--gold); }
+.entry-content a{ color:var(--gold); }
 
 /* ---------- TAGS ----------
    Real markup: .footer .tag contains .tag-text (the "Tags:" label) plus

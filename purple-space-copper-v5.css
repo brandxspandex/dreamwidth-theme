@@ -135,20 +135,23 @@ a:hover{ color:var(--gold-bright); }
 .separator{ display:none; }
 
 /* ---------- COLUMN LAYOUT ----------
-   Tabula Rasa's own stylesheet (which normally handles the 2-column
-   float) is switched off, so this replaces it. #primary/#secondary/
-   #tertiary are siblings inside #content .inner. */
+   Tabula Rasa's own column stylesheet is switched off, so this replaces
+   it. #primary (entries), #secondary (sidebar modules), #tertiary
+   (footer strip: time + "powered by") are siblings in #content .inner.
+   Flex handles this more gracefully than a rigid grid: entries take all
+   remaining room, the sidebar is a fixed comfortable width, and tertiary
+   drops to a full-width strip under both. */
 #content .inner{
-  display:grid; grid-template-columns: 1fr 260px; gap:2em;
-  align-items:start; max-width:960px; margin:0 auto; padding:1.5em;
+  display:flex; flex-wrap:wrap; align-items:flex-start;
+  gap:2em; max-width:1100px; margin:0 auto; padding:1.5em;
 }
-#primary{ grid-column:1; grid-row:1 / span 2; }
-#secondary{ grid-column:2; grid-row:1; }
-#tertiary{ grid-column:2; grid-row:2; }
+#primary{ flex:1 1 460px; min-width:0; order:1; }
+#secondary{ flex:0 0 280px; order:2; }
+#tertiary{ flex:1 1 100%; order:3; text-align:center; }
 #invisible-separator{ display:none; }
-@media (max-width:720px){
-  #content .inner{ grid-template-columns:1fr; }
-  #primary, #secondary, #tertiary{ grid-column:1; }
+@media (max-width:760px){
+  #content .inner{ flex-direction:column; }
+  #primary, #secondary, #tertiary{ flex:1 1 100%; }
 }
 
 .module-navlinks a{ color:var(--cream); text-decoration:none; }
@@ -220,6 +223,10 @@ a:hover{ color:var(--gold-bright); }
 }
 
 /* ---------- SIDEBAR MODULES ---------- */
+/* module wrappers DW nests around the module list -- keep them transparent
+   and full-width so our .module boxes stack cleanly inside the sidebar */
+.module-wrapper, .module-section-one, .module-section-two,
+#secondary .inner, #tertiary .inner{ border:none; background:none; padding:0; margin:0; }
 .module{ background:var(--win); border:1.5px solid var(--gold); box-shadow:4px 4px 0 rgba(0,0,0,0.55); margin-bottom:1.6em; }
 .module-header, .module-name, .module h2{
   margin:0; font-family:var(--mono); font-size:0.72em; letter-spacing:0.06em; text-transform:uppercase;

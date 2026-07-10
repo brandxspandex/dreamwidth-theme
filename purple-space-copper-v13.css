@@ -156,6 +156,17 @@ a:hover{ color:var(--gold-bright); }
 #title{ margin:0; font-size:2.1em; font-weight:400; letter-spacing:0.05em; }
 #title a{ color:var(--gold); text-decoration:none; text-shadow:0 0 18px rgba(200,146,90,0.28); }
 #pagetitle{ margin:0.5em 0 0; font-style:italic; color:var(--cream-dim); font-size:0.85em; font-weight:400; }
+/* the journal SUBTITLE (your tagline) is a different element from #pagetitle
+   (which is per-page context text like "Recent Entries"). Covers the common
+   selector names for it -- Inspect the live element if none match. */
+.subtitle, #subtitle, #header .subtitle, h2.subtitle{
+  margin:0.4em 0 0 !important;
+  font-style:italic !important;
+  font-weight:400 !important;
+  font-size:0.85em !important;
+  color:var(--cream-dim) !important;
+  letter-spacing:0.02em !important;
+}
 .separator{ display:none; }
 
 /* ---------- NAV BUTTON STRIP ----------

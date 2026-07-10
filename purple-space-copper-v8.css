@@ -127,12 +127,35 @@ a:hover{ color:var(--gold-bright); }
 #header{ position:relative; padding:2.2em 1.5em 1.6em; text-align:center; }
 #header::after{
   content:""; position:absolute; top:14px; right:26px;
-  width:56px; height:56px; /* icon added back in a later step */
+  width:56px; height:56px; background:url("https://cdn.jsdelivr.net/gh/brandxspandex/dreamwidth-theme@main/icons/saturn.svg") center/contain no-repeat;
 }
 #title{ margin:0; font-size:2.1em; font-weight:400; letter-spacing:0.05em; }
 #title a{ color:var(--gold); text-decoration:none; text-shadow:0 0 18px rgba(200,146,90,0.28); }
 #pagetitle{ margin:0.5em 0 0; font-style:italic; color:var(--cream-dim); font-size:0.85em; font-weight:400; }
 .separator{ display:none; }
+
+/* ---------- NAV BUTTON STRIP ----------
+   To get the mockup's "recent / regions / archive / profile" button row
+   under the subtitle: set up a Links List (Customize -> Links List, or
+   dreamwidth.org/manage/links) -- it renders as a .module-links module.
+   This styles that module's links as copper buttons and can be placed in
+   the header via the Modules tab. */
+.module-links .module-content ul,
+.module-navlinks.header-nav ul{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:0.5em;
+  list-style:none; margin:1.2em 0 0; padding:0;
+}
+.module-links .module-content li{ display:inline-block; }
+.module-links .module-content a{
+  display:inline-block; font-family:var(--mono); font-size:0.78em;
+  color:var(--gold); text-decoration:none;
+  background:var(--aubergine-deep); border:1.5px solid var(--gold);
+  padding:0.3em 0.9em;
+}
+.module-links .module-content a:hover{ background:var(--aubergine); color:var(--gold-bright); }
+/* if the links module lands in the header, strip its heading + box chrome */
+#header .module-links{ background:none; border:none; box-shadow:none; margin:0; }
+#header .module-links .module-header{ display:none; }
 
 /* ---------- COLUMN LAYOUT ----------
    Tabula Rasa's own column stylesheet is switched off, so this replaces
@@ -179,16 +202,17 @@ a:hover{ color:var(--gold-bright); }
 .entry .access-filter{ margin-left:auto; } /* the little privacy padlock -> far right of bar */
 
 /* content area */
-.entry .contents{ padding:1.2em 1.4em 1.1em; }
+.entry .contents{ padding:1.1em 1.4em 1.1em; }
 .entry .contents .inner{ padding:0; margin:0; }
-.entry-content{ margin:0; width:100%; }
+.entry-content{ margin:0; width:100%; overflow:hidden; }
 .entry-content a{ color:var(--gold); }
-.entry-content img{ max-width:100%; height:auto; border:1.5px solid var(--gold); }
-/* collapse empty userpic/poster slots (whitespace-safe) so they add no gap */
-.entry .userpic:empty, .entry .poster:empty{ display:none; }
-.entry .userpic, .entry .poster{ margin:0; padding:0; }
-/* the entry userpic div sits empty on this layout -- never let it reserve space */
-.entry .contents > .inner > .userpic{ display:none; }
+.entry-content img{ max-width:100%; height:auto; }
+/* the entry userpic div is empty on this layout -> collapse fully (no gap) */
+.entry .contents .userpic{ display:none; }
+.entry .contents .poster:empty{ display:none; }
+.entry .contents .poster{ margin:0; padding:0; }
+/* the wrapper DW puts between .header and .contents carries no styling */
+.entry > .inner > div:not([class]){ margin:0; padding:0; }
 
 /* metadata (mood/music) as a tidy inline strip, not a bulleted list */
 .entry .metadata{ margin:1em 0 0; }
@@ -304,9 +328,9 @@ a:hover{ color:var(--gold-bright); }
   content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
   width:50px; height:50px; background-position:center; background-size:contain; background-repeat:no-repeat;
 }
-.di-quill::before{ /* icon removed for this test */ }
-.di-boba::before{ /* icon removed for this test */ }
-.di-saturn::before{ /* icon removed for this test */ }
+.di-quill::before{ background-image:url("https://cdn.jsdelivr.net/gh/brandxspandex/dreamwidth-theme@main/icons/quill.svg"); }
+.di-boba::before{ background-image:url("https://cdn.jsdelivr.net/gh/brandxspandex/dreamwidth-theme@main/icons/boba.svg"); }
+.di-saturn::before{ background-image:url("https://cdn.jsdelivr.net/gh/brandxspandex/dreamwidth-theme@main/icons/saturn.svg"); }
 .desk-item span{ font-family:var(--mono); font-size:0.62em; color:var(--cream-dim); }
 .desk-item:hover span{ color:var(--gold); }
 

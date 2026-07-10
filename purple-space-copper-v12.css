@@ -109,19 +109,23 @@ a{ color:var(--gold); }
 a:hover{ color:var(--gold-bright); }
 
 
-/* ---------- CUSTOM TEXT MODULE (twinkle host) ----------
-   This module holds only the fixed-position .tw twinkle sprites, which
-   float over the whole viewport -- so the module's own box/header should
-   be invisible. Targets the common class names for it. */
-.module-customtext, .module-text{
-  background:none !important; border:none !important; box-shadow:none !important;
-  margin:0 !important; padding:0 !important;
+/* ---------- CUSTOM TEXT MODULE (desk + twinkle, combined) ----------
+   Free accounts get one custom-text module, so it holds BOTH: the desk
+   markup (real, visible content -- title it "the desk") and the .tw twinkle
+   sprites. The sprites are position:fixed, so they float over the whole
+   viewport no matter which box they technically live in -- they take up no
+   space in the module and don't disturb the desk box. So we DON'T hide the
+   module here; it renders as a normal labelled sidebar box showing the desk. */
+
+/* ---------- THE DESK (icon links inside the custom-text module) ---------- */
+.desk{ display:flex; justify-content:space-around; gap:0.4em; padding:0.4em 0.2em; }
+.desk-item{ width:33%; text-align:center; text-decoration:none; padding-top:52px; position:relative; display:block; }
+.desk-item::before{
+  content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:46px; height:46px; background-position:center; background-size:contain; background-repeat:no-repeat;
 }
-.module-customtext .module-header, .module-text .module-header,
-.module-customtext .module-title, .module-text .module-title{ display:none !important; }
-.module-customtext .module-content, .module-text .module-content{
-  padding:0 !important; background:none !important;
-}
+.desk-item span{ font-family:var(--mono); font-size:0.62em; color:var(--cream-dim); }
+.desk-item:hover span{ color:var(--gold); }
 
 /* ---------- twinkle ----------
    The whole sky does a subtle brightness shimmer (skyshimmer).

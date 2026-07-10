@@ -118,6 +118,11 @@ a:hover{ color:var(--gold-bright); }
    module here; it renders as a normal labelled sidebar box showing the desk. */
 
 /* ---------- THE DESK (icon links inside the custom-text module) ---------- */
+/* Rename the module's "CUSTOM TEXT" header to "the desk" via
+   Customize -> Text tab (look for the Custom Text module heading field). */
+/* the .tw twinkle sprites share this module but are position:fixed + zero-size,
+   so the content area should shrink-wrap the desk with no trailing gap */
+.module-customtext .module-content, .module-text .module-content{ overflow:hidden; }
 .desk{ display:flex; justify-content:space-around; gap:0.4em; padding:0.4em 0.2em; }
 .desk-item{ width:33%; text-align:center; text-decoration:none; padding-top:52px; position:relative; display:block; }
 .desk-item::before{
@@ -136,7 +141,7 @@ a:hover{ color:var(--gold-bright); }
 */
 @keyframes skyshimmer{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.06); } }
 @keyframes tw{ 0%,100%{ opacity:0.25; transform:scale(0.7); } 50%{ opacity:1; transform:scale(1.15); } }
-.tw{ position:fixed; width:6px; height:6px; border-radius:50%; pointer-events:none; z-index:0;
+.tw{ position:fixed; width:6px; height:6px; margin:0; border-radius:50%; pointer-events:none; z-index:0; line-height:0; font-size:0; vertical-align:top;
      box-shadow:0 0 6px 1px currentColor; animation:tw 3.2s ease-in-out infinite; }
 .tw::before{ content:""; position:absolute; inset:0; border-radius:50%; background:currentColor; }
 @media (prefers-reduced-motion: reduce){ .tw{ animation:none; opacity:0.9; } body{ animation:none !important; } }

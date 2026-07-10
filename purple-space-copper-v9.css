@@ -172,9 +172,11 @@ a:hover{ color:var(--gold-bright); }
 #secondary{ flex:0 0 280px; order:2; }
 #tertiary{ flex:1 1 100%; order:3; text-align:center; }
 #invisible-separator{ display:none; }
-@media (max-width:760px){
+@media (max-width:800px){
   #content > .inner{ flex-direction:column; }
-  #primary, #secondary, #tertiary{ flex:1 1 100%; }
+  #primary{ order:1; flex:1 1 auto; width:100%; min-width:0; }
+  #secondary{ order:2; flex:1 1 auto; width:100%; }
+  #tertiary{ order:3; flex:1 1 auto; width:100%; }
 }
 
 .module-navlinks a{ color:var(--cream); text-decoration:none; }

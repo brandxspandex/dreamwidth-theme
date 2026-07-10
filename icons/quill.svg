@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g fill="none" stroke="#c8925a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- inkwell: faceted glass body, suggested by outline + facet lines -->
+    <path d="M23 41 L41 41 L43 47 L42.5 56 Q42.5 58.5 39.5 58.5 L24.5 58.5 Q21.5 58.5 21.5 56 L21 47 Z"/>
+    <!-- facet lines -->
+    <path d="M27 41 L26 58.3" stroke="#a9743f" stroke-width="0.7"/>
+    <path d="M37 41 L38 58.3" stroke="#a9743f" stroke-width="0.7"/>
+    <!-- ink level: single line + light hatching below -->
+    <path d="M22.6 50 L41.4 50" stroke-width="0.8"/>
+    <g stroke="#a9743f" stroke-width="0.55" opacity="0.75">
+      <path d="M24 52.5 L40 52.5"/>
+      <path d="M24.5 55 L39.5 55"/>
+    </g>
+    <!-- collar + mouth -->
+    <path d="M26 37.5 L38 37.5 L38 41 L26 41 Z"/>
+    <ellipse cx="32" cy="37.5" rx="6" ry="1.8"/>
+    <!-- quill shaft: one elegant curve -->
+    <path d="M33.5 36.5 Q41 22 53 7" stroke-width="1.2"/>
+    <!-- feather: open outline, not filled -->
+    <path d="M53 7 Q42.5 9.5 38 18 Q35.8 22.5 36 28.5 Q41 24.5 45 18.5 Q50 11.5 53 7 Z" stroke-width="1"/>
+    <!-- rachis (center vein of feather) -->
+    <path d="M52 8.5 Q44 15 38.5 25" stroke="#a9743f" stroke-width="0.7"/>
+    <!-- barbs: fine hatch strokes off the rachis -->
+    <g stroke="#a9743f" stroke-width="0.55" opacity="0.85">
+      <path d="M48.5 11.5 L44.5 12.4"/>
+      <path d="M46.5 13.8 L42.3 15"/>
+      <path d="M44.7 16.2 L40.6 17.8"/>
+      <path d="M43 18.7 L39.2 20.7"/>
+      <path d="M41.4 21.3 L38 23.6"/>
+      <path d="M40 23.8 L37 26.3"/>
+    </g>
+    <!-- nib -->
+    <path d="M35.2 32.5 L33.5 36.5 L36.6 34.2 Z" fill="#c8925a" stroke="none"/>
+  </g>
+</svg>

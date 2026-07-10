@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g fill="none" stroke="#c8925a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- straw: two parallel lines, angle-cut -->
+    <path d="M40.6 5 L36.2 24"/>
+    <path d="M43.4 6 L39 24.5"/>
+    <path d="M40.6 5 L43.4 6"/>
+    <!-- dome lid -->
+    <path d="M20 22.5 Q20 15 32 15 Q44 15 44 22.5"/>
+    <path d="M18.5 22.5 L45.5 22.5" stroke-width="1.3"/>
+    <!-- cup: tapered outline, rounded base -->
+    <path d="M20.5 22.5 L44 22.5 L42 53 Q41.7 57.5 36.8 57.5 L27.2 57.5 Q22.3 57.5 22 53 Z"/>
+    <!-- tea line -->
+    <path d="M22 30 L42.4 30" stroke="#a9743f" stroke-width="0.8"/>
+    <!-- gentle hatching for liquid -->
+    <g stroke="#a9743f" stroke-width="0.5" opacity="0.6">
+      <path d="M23 35 L41.6 35"/>
+      <path d="M23.4 40 L41 40"/>
+      <path d="M23.8 45 L40.5 45"/>
+    </g>
+    <!-- pearls: open circles, engraved -->
+    <g stroke-width="0.9">
+      <circle cx="27" cy="50.5" r="2.6"/>
+      <circle cx="33.5" cy="52" r="2.6"/>
+      <circle cx="39" cy="50" r="2.4"/>
+      <circle cx="30" cy="54.8" r="2.2"/>
+      <circle cx="36.6" cy="55.2" r="2.2"/>
+    </g>
+  </g>
+</svg>

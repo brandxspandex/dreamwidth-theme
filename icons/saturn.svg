@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g fill="none" stroke="#c8925a" stroke-linecap="round">
+    <!-- ring: back arc (thin, dimmer — passes behind) -->
+    <g transform="rotate(-20 32 32)">
+      <path d="M9 32 A23 8 0 0 1 55 32" stroke="#a9743f" stroke-width="1"/>
+      <path d="M12.5 32 A19.5 6.4 0 0 1 51.5 32" stroke="#a9743f" stroke-width="0.6" opacity="0.7"/>
+    </g>
+    <!-- planet: open circle -->
+    <circle cx="32" cy="32" r="13.5" stroke-width="1.2"/>
+    <!-- engraved latitude shading: curved hatch lines, denser toward limb -->
+    <g stroke="#a9743f" stroke-width="0.55" opacity="0.85">
+      <path d="M21.5 25.5 Q32 28.5 42.5 25.5"/>
+      <path d="M19.6 29.5 Q32 33 44.4 29.5"/>
+      <path d="M19.3 34 Q32 37.5 44.7 34"/>
+      <path d="M20.4 38.5 Q32 42 43.6 38.5"/>
+      <path d="M23 42.5 Q32 45 41 42.5"/>
+    </g>
+    <!-- terminator shading: short hatches on the lower-left limb -->
+    <g stroke="#a9743f" stroke-width="0.5" opacity="0.6">
+      <path d="M21.5 38 Q23.5 41.5 26.5 43.8"/>
+      <path d="M20.3 35 Q22 40 26 43.2"/>
+    </g>
+    <!-- ring: front arcs (brighter, over planet) -->
+    <g transform="rotate(-20 32 32)">
+      <path d="M9 32 A23 8 0 0 0 55 32" stroke-width="1.4"/>
+      <path d="M12.5 32 A19.5 6.4 0 0 0 51.5 32" stroke-width="0.7" opacity="0.85"/>
+    </g>
+  </g>
+</svg>

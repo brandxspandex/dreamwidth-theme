@@ -108,6 +108,21 @@ body{
 a{ color:var(--gold); }
 a:hover{ color:var(--gold-bright); }
 
+
+/* ---------- CUSTOM TEXT MODULE (twinkle host) ----------
+   This module holds only the fixed-position .tw twinkle sprites, which
+   float over the whole viewport -- so the module's own box/header should
+   be invisible. Targets the common class names for it. */
+.module-customtext, .module-text{
+  background:none !important; border:none !important; box-shadow:none !important;
+  margin:0 !important; padding:0 !important;
+}
+.module-customtext .module-header, .module-text .module-header,
+.module-customtext .module-title, .module-text .module-title{ display:none !important; }
+.module-customtext .module-content, .module-text .module-content{
+  padding:0 !important; background:none !important;
+}
+
 /* ---------- twinkle ----------
    The whole sky does a subtle brightness shimmer (skyshimmer).
    Per-star twinkle needs real page elements, which Custom CSS can't

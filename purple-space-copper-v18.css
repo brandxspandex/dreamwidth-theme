@@ -214,6 +214,19 @@ a:hover{ color:var(--gold-bright); }
   #tertiary{ order:3; flex:1 1 auto; width:100%; }
 }
 
+/* built-in navigation module: match the custom NAVIGATE module's look --
+   diamond markers instead of default bullets, roomy spacing */
+.module-navlinks .module-content ul{
+  list-style:none; margin:0; padding:0;
+}
+.module-navlinks .module-content li{
+  position:relative; padding:0.35em 0 0.35em 1.6em;
+}
+.module-navlinks .module-content li::before{
+  content:"◇";                 /* diamond, matching the desk/nav markers */
+  position:absolute; left:0.2em; top:0.35em;
+  color:var(--gold); font-size:0.9em;
+}
 .module-navlinks a{ color:var(--cream); text-decoration:none; }
 .module-navlinks a:hover{ color:var(--gold); }
 

@@ -337,18 +337,11 @@ a:hover{ color:var(--gold-bright); }
 .module-userprofile .userpic img{
   width:100px !important; height:100px !important;
   border-radius:50%;
-  border:3px solid var(--gold);
-  box-shadow:0 0 0 2px var(--void), 0 0 0 5px var(--aubergine-lit), 3px 3px 0 rgba(0,0,0,0.5);
+  border:2px solid var(--gold);   /* inner copper ring, now thinner */
+  box-shadow:0 0 0 2px var(--void), 0 0 0 7px var(--aubergine-lit), 3px 3px 0 rgba(0,0,0,0.5);  /* outer aubergine ring, now thicker */
   object-fit:cover;
 }
-/* four small "rivets" around the locket rim */
-.module-userprofile .userpic::before,
-.module-userprofile .userpic::after{
-  content:""; position:absolute; width:5px; height:5px; border-radius:50%;
-  background:var(--gold); box-shadow:0 0 0 1px var(--void);
-}
-.module-userprofile .userpic::before{ top:-2px; left:50%; transform:translateX(-50%); }
-.module-userprofile .userpic::after{ bottom:-2px; left:50%; transform:translateX(-50%); }
+/* (rivet dots removed for a cleaner locket) */
 .module-userprofile .journaltitle, .module-userprofile .name{
   display:block; font-family:var(--mono); font-size:0.8em; color:var(--cream);
   letter-spacing:0.04em; margin-top:0.3em;

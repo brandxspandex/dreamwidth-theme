@@ -238,6 +238,19 @@ a:hover{ color:var(--gold-bright); }
 .entry .header .datetime a{ color:var(--cream-dim); text-decoration:none; }
 .entry .access-filter{ margin-left:auto; } /* the little privacy padlock -> far right of bar */
 
+/* window control dots styled as Starfleet Lt. Commander rank pips:
+   two solid gold pips + one hollow (dark-center) pip, pushed to the right
+   of the title bar like window buttons */
+.win-dots{
+  margin-left:auto; display:inline-flex; align-items:center; gap:5px;
+}
+.win-dots .d1, .win-dots .d2, .win-dots .d3{
+  display:inline-block; width:11px; height:11px; border-radius:50%;
+  border:1.5px solid var(--gold); box-sizing:border-box;
+}
+.win-dots .d1, .win-dots .d2{ background:var(--gold); }      /* two solid pips */
+.win-dots .d3{ background:var(--void); }                      /* one hollow pip */
+
 /* content area */
 .entry .contents{ padding:1.1em 1.4em 1.1em; }
 .entry .contents .inner{ padding:0; margin:0; }

@@ -238,18 +238,23 @@ a:hover{ color:var(--gold-bright); }
 .entry .header .datetime a{ color:var(--cream-dim); text-decoration:none; }
 .entry .access-filter{ margin-left:auto; } /* the little privacy padlock -> far right of bar */
 
-/* window control dots styled as Starfleet Lt. Commander rank pips:
-   two solid gold pips + one hollow (dark-center) pip, pushed to the right
-   of the title bar like window buttons */
-.win-dots{
-  margin-left:auto; display:inline-flex; align-items:center; gap:5px;
+/* Starfleet Lt. Commander rank pips, drawn on the title bar as CSS (DW's
+   entry markup has no dots element to style, so we paint them ourselves).
+   Uses a real element (::after) as the hollow pip, and box-shadow to stamp
+   the two solid pips beside it -- robust, no tricky gradients. */
+.entry .header{ position:relative; }
+.entry .header::after{
+  content:""; align-self:center; margin-left:auto;
+  width:11px; height:11px; border-radius:50%;
+  box-sizing:border-box;
+  border:1.5px solid var(--gold);      /* THIS element = the hollow pip */
+  background:var(--void);
+  /* two solid gold pips stamped to the LEFT via box-shadow */
+  box-shadow:
+    -15px 0 0 0 var(--gold),
+    -30px 0 0 0 var(--gold);
+  margin-right:2px;
 }
-.win-dots .d1, .win-dots .d2, .win-dots .d3{
-  display:inline-block; width:11px; height:11px; border-radius:50%;
-  border:1.5px solid var(--gold); box-sizing:border-box;
-}
-.win-dots .d1, .win-dots .d2{ background:var(--gold); }      /* two solid pips */
-.win-dots .d3{ background:var(--void); }                      /* one hollow pip */
 
 /* content area */
 .entry .contents{ padding:1.1em 1.4em 1.1em; }
